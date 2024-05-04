@@ -1,0 +1,37 @@
+# Server Port Configuration
+server:
+  error:
+    include-stacktrace: never
+  port: ${PORT:${SERVER_PORT:0}}
+
+openapi:
+  service:
+    title: CycleScape Bike Service API
+    version: 1.0
+    url: http://localhost:55910
+
+springdoc:
+  api-docs:
+    path: /bike-service/v3/api-docs
+  swagger-ui:
+    path: /bike-service/swagger-ui.html
+
+spring:
+  application:
+    name: Bike-Service
+  # Spring Data JPA Configuration
+  jpa:
+    show-sql: true
+    # Spring Data JPA Hibernate Configuration
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  # Spring DataSource Configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/bike2
+    username: root
+    password: angienaye20
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
